@@ -372,6 +372,15 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   padding: 0 75px;
 }
 
+.rsvp .spinner-block{
+  display: none;
+}
+
+.rsvp img.spinner{
+  height: 30px;
+  margin: 0 auto;
+}
+
 .save-the-date{
   background-image: url('/assets/save-the-date.jpg');
   padding: 0!important;
@@ -517,6 +526,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     margin-top:20px;
     font-size: 15px;
 /*    color: #fefefe;*/
+  }
+  .rsvp img.spinner{
+    height: 20px;
   }
 }
 

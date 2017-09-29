@@ -141,7 +141,10 @@
       </div>
       <div class="form-group">
         <div class="col-xs-12">
-          <%= button_tag "Yes, I will come", :class=>"btn btn-rsvp col-xs-12" %>
+          <%= button_tag "Yes, I will come", :class=>"btn btn-rsvp col-xs-12", :id => "rsvp" %>
+          <div class="spinner-block">
+            <%= image_tag "spinner.gif", :class => "img img-responsive spinner" %>Loading
+          </div>
           <%#= button_tag "Can't Going", :class=>"btn btn-primary col-xs-6" %>
         </div>
       </div>
@@ -184,5 +187,15 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    $("button#rsvp").click(function() {
+      $("button#rsvp").hide();
+      $(".spinner-block").show();
+    });
+  })
+
+</script>
 
 <%= javascript_include_tag "css3-animate-it" %>
