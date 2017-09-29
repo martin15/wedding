@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Martin & Theodora Wedding</title>
+  <%= stylesheet_link_tag    'application', "bootstrap" %>
+  <%= javascript_include_tag 'application', "bootstrap", "jquery.flexslider" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<%#*<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">%>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2{font-family: "charter", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.bgimg {background-image: url("/w3images/wedding_couple.jpg")}
+.bgimg2 {background-image: url("/w3images/flowers.jpg")}
+</style>
+
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      controlNav: false
+    });
+
+       //alert('lebar ' + $(window).width() + ' tinggi ' +$(window).height())
+  });
+
+$(document).ready(function() {
+  $("#navbar-main ul li a[href^='#']").on('click', function(e) {
+     // prevent default anchor click behavior
+     e.preventDefault();
+
+     // animate
+     $('html, body').animate({
+         scrollTop: $(this.hash).offset().top
+       }, 300, function(){
+
+         // when done, add hash to url
+         // (default click behaviour)
+         window.location.hash = this.hash;
+       });
+
+
+  });
+
+});
+</script>
+
+<body>
+  <%= yield %>
+
+
+</body>
+</html>
+
