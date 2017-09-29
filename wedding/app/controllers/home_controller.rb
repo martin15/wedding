@@ -4,9 +4,10 @@ class HomeController < ApplicationController
   end
 
   def reservation
-    puts params.inspect
-    puts "-------"
     Rsvp.notification_martin(params[:name]).deliver_now
-    redirect_to root_path
+    Rsvp.notification_dora(params[:name]).deliver_now
+    respond_to do |format|
+      format.js
+    end
   end
 end
